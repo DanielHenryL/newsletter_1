@@ -5,7 +5,7 @@ class NewsletterUser(models.Model):
     email = models.EmailField(null=False, unique=True)
     date_added = models.DateTimeField(auto_now_add=True)
 
-    def _str__(self):
+    def __str__(self):
         return self.email
 
 class Newsletter(models.Model):
@@ -15,5 +15,5 @@ class Newsletter(models.Model):
     email = models.ManyToManyField(NewsletterUser)
     created = models.DateTimeField(auto_now_add=True)
 
-    def _str__(self):
+    def __str__(self):
         return self.name

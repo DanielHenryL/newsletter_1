@@ -1,6 +1,6 @@
-from django.shortcuts import render
-from django.core.checks import messages
+from django.contrib import messages
 from .models import NewsletterUser
+from django.shortcuts import render
 from .forms import NewsletterUserSignUpForm
 from django.conf import settings
 from django.template.loader import render_to_string
@@ -26,7 +26,7 @@ def newsletter_signup(request):
 
             #para mandar mensaje se usa conmo html por es mas rapido
             message.content_subtype = 'html'
-            message.send
+            message.send()
     context ={
         'form':form
     }
