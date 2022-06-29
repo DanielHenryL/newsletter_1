@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tailwind',
     'theme',
-    'newsletters'
+    'newsletters',
+    'dashboard',
 ]
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
