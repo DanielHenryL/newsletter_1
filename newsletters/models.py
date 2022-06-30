@@ -23,5 +23,7 @@ class Newsletter(models.Model):
     def __str__(self):
         return self.name
 
+    # def get_newsletters_list(self):
+    #     return self.
     class Meta:
         ordering = ('-created',)
