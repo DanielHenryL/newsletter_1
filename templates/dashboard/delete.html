@@ -26,7 +26,7 @@
       <div class="mt-5 flex-1 h-0 overflow-y-auto">
         <nav class="px-2 space-y-1">
           <!-- Current: "bg-indigo-800 text-white", Default: "text-indigo-100 hover:bg-indigo-600" -->
-          <a href="{% url 'dashboard:home' %}" class="bg-indigo-800 text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
+          <a href="#" class="bg-indigo-800 text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
             <!-- Heroicon name: outline/home -->
             <svg class="mr-4 flex-shrink-0 h-6 w-6 text-indigo-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -62,7 +62,7 @@
         <div class="mt-5 flex-1 flex flex-col">
           <nav class="flex-1 px-2 space-y-1">
             <!-- Current: "bg-indigo-800 text-white", Default: "text-indigo-100 hover:bg-indigo-600" -->
-            <a href="{% url 'dashboard:home' %}" class="text-indigo-100 hover:bg-indigo-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+            <a href="#" class="bg-indigo-800 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
               <!-- Heroicon name: outline/home -->
               <svg class="mr-3 flex-shrink-0 h-6 w-6 text-indigo-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -70,13 +70,15 @@
               Dashboard
             </a>
 
-            <a href="{% url 'dashboard:list' %}" class=" bg-indigo-800 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+            <a href="{% url 'dashboard:list' %}" class="text-indigo-100 hover:bg-indigo-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
               <!-- Heroicon name: outline/users -->
               <svg class="mr-3 flex-shrink-0 h-6 w-6 text-indigo-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
               </svg>
               Newsletters
             </a>
+
+
           </nav>
         </div>
       </div>
@@ -121,22 +123,14 @@
           <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
             <div class="ml-4 mt-2">
               <h3 class="text-lg leading-6 font-medium text-gray-900">
-                Newsletter Detail : {{newsletter.name|title}}
+                Delete newsletter?
               </h3>
-            </div>
-            <div class="ml-4 mt-2 flex-shrink-0">
-              <a href="{% url 'dashboard:update' newsletter.pk %}" class="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-yellow-200 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400">
-                Editar newsletter
-              </a>
-              <a href="{% url 'dashboard:delete' newsletter.pk %}" class="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-300 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
-                Eliminar newsletter
-              </a>
             </div>
           </div>
         </div>
 
 
-        <div class="max-w-7x2 mx-auto px-4 sm:px-6 ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           
 
           <!-- This example requires Tailwind CSS v2.0+ -->
@@ -144,34 +138,14 @@
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
               <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                 <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                  
-                  <h1>
-                    <span class="block text-base mt-4 text-center text-indigo-600 font-semibold tracking-wide uppercase">
-                    Subject:</span>
-                    <span class="mt-1 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl ">
-                    {{newsletter.subject}}</span>
-                  </h1>
-                  
-                  <h2>
-                    <span class="block text-base text-center mt-4 text-indigo-600 font-semibold tracking-wide uppercase">
-                    Body:</span>
-                    <span class="mt-1 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-800 sm:text-2xl ">
-                      {{newsletter.body}}</span>
-                  </h2>
-                  
-                  <h2>
-                    <span class="block text-base text-center mt-4 text-indigo-600 font-semibold tracking-wide uppercase">
-                    Emails:</span>
-                    <span class="mt-1 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-600 sm:text-2xl ">
-                      
-                      {% for letter in newsletter.email.all %}
-                        {{letter.email}}
-                        <br>
-                      {% endfor %}
-                        
-                  </h2>
 
+                  <form method="POST">
+                  {% csrf_token %}
                   
+
+                  <button class="px-3 py-2 bg-red-200 rounded-lg text-red-500" type="submit">Delete broadcast</button>
+                  </form>
+
                 </div>
               </div>
             </div>
